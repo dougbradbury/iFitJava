@@ -1,0 +1,28 @@
+<project name="ifit" default="compile" basedir=".">
+    <path id="classpath">
+        <fileset id="test_jars" dir="lib">
+            <include name="junit-4.4.jar"/>
+        </fileset>
+    </path>
+
+    <target name="compile" description="compile ifit">
+        <mkdir dir="out"/>
+        <javac srcdir="src" destdir="out" debug="false" encoding="UTF-8">
+            <include name="**/*.java"/>
+            <classpath refid="classpath"/>
+        </javac>
+    </target>
+
+    <target name="jar" depends="compile" description="generate the ifit jar file">
+        <mkdir dir="bin"/>
+        <jar jarfile="bin/ifit.jar" basedir="out">
+            <include name="ifit/**/*.class"/>
+            <exclude name="**/*Test.class"/>
+            <manifest>
+                <attribute name="Built-By" value="Doug Bradbury"/>
+            </manifest>
+        </jar>
+    </target>
+
+
+</project>

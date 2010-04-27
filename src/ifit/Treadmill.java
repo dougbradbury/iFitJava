@@ -1,43 +1,46 @@
 package ifit;
 
-public class Treadmill
-{
-  private float speed;
-  private float incline;
+public class Treadmill {
+    private float speed;
+    private float incline;
+    private Player player;
 
-  public void set(float incline, float speed)
-  {
-    this.speed = speed;
-    this.incline = incline;
-    sendMessage();
-  }
+    public Treadmill() {
+        Generator generator = new Generator(this.incline, this.speed);
+        generator.generateSignal();
+        player = new Player(generator);
+        player.start();
+    }
 
-  private void sendMessage()
-  {
-    Generator generator = new Generator(this.incline, this.speed);
-    generator.generateSignal();
-    Player.play(generator);
-  }
+    public void set(float incline, float speed) {
+        this.speed = speed;
+        this.incline = incline;
+        sendMessage();
+    }
 
-  public void setSpeed(float speed)
-  {
-    this.speed = speed;
-    sendMessage();
-  }
+    private void sendMessage() {
+        player.play();
+    }
 
-  public void setIncline(float incline)
-  {
-    this.incline = incline;
-    sendMessage();
-  }
+    public void setSpeed(float speed) {
+        this.speed = speed;
+        sendMessage();
+    }
 
-  public float incline()
-  {
-    return this.incline;
-  }
+    public void setIncline(float incline) {
+        this.incline = incline;
+        sendMessage();
+    }
 
-  public float speed()
-  {
-    return this.speed;
-  }
+    public float incline() {
+        return this.incline;
+    }
+
+    public float speed() {
+        return this.speed;
+    }
+
+    public void stop() {
+        player.stop();
+    }
 }

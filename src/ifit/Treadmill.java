@@ -6,10 +6,7 @@ public class Treadmill {
     private Player player;
 
     public Treadmill() {
-        Generator generator = new Generator(this.incline, this.speed);
-        generator.generateSignal();
-        player = new Player(generator);
-        player.start();
+        player = new Player();
     }
 
     public void set(float incline, float speed) {
@@ -19,7 +16,9 @@ public class Treadmill {
     }
 
     private void sendMessage() {
-        player.play();
+        Generator generator = new Generator(this.incline, this.speed);
+        generator.generateSignal();
+        player.play(generator);
     }
 
     public void setSpeed(float speed) {

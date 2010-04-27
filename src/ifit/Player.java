@@ -6,14 +6,9 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
 
 public class Player {
-    private Generator generator;
     private SourceDataLine line;
 
-    public Player(Generator generator) {
-        this.generator = generator;
-    }
-
-    public void start() {
+    public void play(Generator generator) {
         DataLine.Info lineInfo = new DataLine.Info(SourceDataLine.class, generator.getAudioFormat());
 
         if (!AudioSystem.isLineSupported(lineInfo)) {
@@ -27,11 +22,7 @@ public class Player {
         }
         catch (LineUnavailableException ex) {
             System.out.println("Line Unavailable: " + ex.getMessage());
-        }
-    }
-
-    public void play() {
-        byte[] pcmSignal = generator.getByteSignal();
+        }        byte[] pcmSignal = generator.getByteSignal();
         int written = line.write(pcmSignal, 0, pcmSignal.length);
         if (written != pcmSignal.length) {
             System.out.println("all data not written");

@@ -95,7 +95,7 @@
       <file leaf-file-name="Player.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ifit/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="50" selection-start="1271" selection-end="1271" vertical-scroll-proportion="0.825">
+            <state line="25" column="47" selection-start="907" selection-end="907" vertical-scroll-proportion="0.55">
               <folding />
             </state>
           </provider>
@@ -104,7 +104,7 @@
       <file leaf-file-name="Treadmill.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ifit/Treadmill.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="18" selection-start="899" selection-end="899" vertical-scroll-proportion="0.0">
+            <state line="20" column="18" selection-start="481" selection-end="481" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -143,9 +143,9 @@
         <option value="$PROJECT_DIR$/src/ifit/TreadmillTest.java" />
         <option value="$PROJECT_DIR$/build.xml" />
         <option value="$PROJECT_DIR$/src/ifit/Generator.java" />
+        <option value="$PROJECT_DIR$/src/ifit/GeneratorTest.java" />
         <option value="$PROJECT_DIR$/src/ifit/Player.java" />
         <option value="$PROJECT_DIR$/src/ifit/Treadmill.java" />
-        <option value="$PROJECT_DIR$/src/ifit/GeneratorTest.java" />
       </list>
     </option>
   </component>
@@ -777,14 +777,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ifit/Treadmill.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="18" selection-start="899" selection-end="899" vertical-scroll-proportion="0.0">
+        <state line="20" column="18" selection-start="481" selection-end="481" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ifit/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="50" selection-start="1271" selection-end="1271" vertical-scroll-proportion="0.825">
+        <state line="25" column="47" selection-start="907" selection-end="907" vertical-scroll-proportion="0.55">
           <folding />
         </state>
       </provider>

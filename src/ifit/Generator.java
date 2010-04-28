@@ -31,7 +31,7 @@ public class Generator
     signal = new int[SAMPLESPERSIGNAL * 5];
   }
 
-  public AudioFormat getAudioFormat()
+  public static AudioFormat getAudioFormat()
   {
     return new AudioFormat(AudioFormat.Encoding.PCM_SIGNED, SAMPLERATE, 16, 2, 4, SAMPLERATE, true);
   }

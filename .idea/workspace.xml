@@ -63,25 +63,16 @@
       <file leaf-file-name="Generator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ifit/Generator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="26" selection-start="1736" selection-end="1736" vertical-scroll-proportion="0.0">
+            <state line="33" column="28" selection-start="870" selection-end="886" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="33" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Player.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Player.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ifit/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="9" selection-start="221" selection-end="221" vertical-scroll-proportion="0.0">
+            <state line="32" column="22" selection-start="691" selection-end="691" vertical-scroll-proportion="0.57399106">
               <folding />
             </state>
           </provider>
@@ -90,16 +81,16 @@
       <file leaf-file-name="Treadmill.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ifit/Treadmill.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="31" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0">
+            <state line="9" column="54" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TreadmillTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TreadmillTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ifit/TreadmillTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="21" selection-start="243" selection-end="243" vertical-scroll-proportion="0.21524663">
+            <state line="12" column="27" selection-start="249" selection-end="249" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -108,7 +99,7 @@
       <file leaf-file-name="GeneratorTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ifit/GeneratorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="18" selection-start="410" selection-end="410" vertical-scroll-proportion="0.0">
+            <state line="17" column="63" selection-start="553" selection-end="553" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -124,11 +115,11 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/build.xml" />
         <option value="$PROJECT_DIR$/src/ifit/Player.java" />
+        <option value="$PROJECT_DIR$/src/ifit/Generator.java" />
         <option value="$PROJECT_DIR$/src/ifit/Treadmill.java" />
         <option value="$PROJECT_DIR$/src/ifit/GeneratorTest.java" />
-        <option value="$PROJECT_DIR$/build.xml" />
-        <option value="$PROJECT_DIR$/src/ifit/Generator.java" />
         <option value="$PROJECT_DIR$/src/ifit/TreadmillTest.java" />
       </list>
     </option>
@@ -168,7 +159,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
@@ -209,6 +199,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -637,7 +628,7 @@
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32827324" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -687,6 +678,17 @@
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
+    <buildFile url="file://$PROJECT_DIR$/build.xml">
+      <antCommandLine value="" />
+      <runInBackground value="true" />
+      <targetFilters>
+        <filter targetName="jar" isVisible="true" />
+        <filter targetName="compile" isVisible="true" />
+      </targetFilters>
+      <treeView value="true" />
+      <verbose value="true" />
+      <viewClosedWhenNoErrors value="false" />
+    </buildFile>
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$PROJECT_DIR$/lib/junit-4.4.jar!/org/junit/Assert.class">
@@ -706,36 +708,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="33" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ifit/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="9" selection-start="221" selection-end="221" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ifit/GeneratorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="18" selection-start="410" selection-end="410" vertical-scroll-proportion="0.0">
+        <state line="23" column="102" selection-start="844" selection-end="844" vertical-scroll-proportion="0.27408144">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ifit/Generator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="26" selection-start="1736" selection-end="1736" vertical-scroll-proportion="0.0">
+        <state line="33" column="28" selection-start="870" selection-end="886" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ifit/GeneratorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="63" selection-start="553" selection-end="553" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ifit/Treadmill.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="31" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0" />
+        <state line="9" column="54" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ifit/TreadmillTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="21" selection-start="243" selection-end="243" vertical-scroll-proportion="0.21524663">
+        <state line="12" column="27" selection-start="249" selection-end="249" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ifit/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="22" selection-start="691" selection-end="691" vertical-scroll-proportion="0.57399106">
           <folding />
         </state>
       </provider>

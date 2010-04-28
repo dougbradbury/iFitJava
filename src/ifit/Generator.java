@@ -33,15 +33,17 @@ public class Generator
 
   public AudioFormat getAudioFormat()
   {
-    return new AudioFormat(AudioFormat.Encoding.PCM_SIGNED, SAMPLERATE, 16, 1, 2, SAMPLERATE, true);
+    return new AudioFormat(AudioFormat.Encoding.PCM_SIGNED, SAMPLERATE, 16, 2, 4, SAMPLERATE, true);
   }
 
   public byte[] getByteSignal()
   {
-    byte[] bytes = new byte[signal.length*2];
+    byte[] bytes = new byte[signal.length*4];
     int byteIndex = 0;
     for (int i : signal)
     {
+      bytes[byteIndex++] = (byte) ((i >> 8) & 0xFF);
+      bytes[byteIndex++] = (byte) (i & 0xFF);
       bytes[byteIndex++] = (byte) ((i >> 8) & 0xFF);
       bytes[byteIndex++] = (byte) (i & 0xFF);
     }
@@ -60,8 +62,8 @@ public class Generator
 
     sigp[i++] = 0;
 
-    i = writeByte(intSpeed, sigp, i);
     i = writeByte(intIncline, sigp, i);
+    i = writeByte(intSpeed, sigp, i);
     i = writeByte(check, sigp, i);
 
     sigp[i] = 0;

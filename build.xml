@@ -1,4 +1,4 @@
-<project name="ifit" default="compile" basedir=".">
+<project name="ifit" default="jar" basedir=".">
     <path id="classpath">
         <fileset id="test_jars" dir="lib">
             <include name="junit-4.4.jar"/>

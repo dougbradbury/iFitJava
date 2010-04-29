@@ -5,12 +5,12 @@ import org.junit.*;
 import java.util.Arrays;
 
 public class GeneratorTest extends Assert {
-    private static final int speedStart = 1;
-    private static final int inclineStart = 11;
+    private static final int speedStart = 11;
+    private static final int inclineStart = 1;
     private static final int sumStart = 21;
 
     @Test
-    public void shouldSetSpeedAndIncline() throws Exception {
+    public void shouldPlayPureTone() throws Exception {
         Generator generator = new Generator(1.0f, 10.0f);
         int[] allOnes = new int[64];
         Arrays.fill(allOnes, 1);
@@ -38,7 +38,7 @@ public class GeneratorTest extends Assert {
         int[] signal = Generator.binaryModulator(0.8f, 3.2f);
         assertEquals(0, signal[0]);
 
-        int i = 1;
+        int i = speedStart;
         assertEquals(0, signal[i + 0]);
         assertEquals(1, signal[i + 1]);
 

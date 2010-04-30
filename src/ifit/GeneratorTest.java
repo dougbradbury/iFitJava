@@ -4,94 +4,21 @@ import org.junit.*;
 
 import java.util.Arrays;
 
-public class GeneratorTest extends Assert {
-    private static final int speedStart = 11;
-    private static final int inclineStart = 1;
-    private static final int sumStart = 21;
+public class GeneratorTest extends Assert
+{
 
-    @Test
-    public void shouldPlayPureTone() throws Exception {
-        Generator generator = new Generator(1.0f, 10.0f);
-        int[] allOnes = new int[64];
-        Arrays.fill(allOnes, 1);
-        generator.writeModulationOf(allOnes);
-        Player player = new Player(Generator.getAudioFormat());        
-        player.play(generator);
-        player.stop();
-    }
-
-    @Test
-    public void shouldBinaryModulate() throws Exception {
-        int[] signal = Generator.binaryModulator(0.0f, 0.0f);
-        assertEquals(0, signal[0]);
-
-        checkZeroByteAt(signal, speedStart);
-        checkZeroByteAt(signal, inclineStart);
-        checkZeroByteAt(signal, sumStart);
-
-        assertEquals(0, signal[31]);
-
-    }
-
-    @Test
-    public void shouldBinaryModulateNonZero() throws Exception {
-        int[] signal = Generator.binaryModulator(0.8f, 3.2f);
-        assertEquals(0, signal[0]);
-
-        int i = speedStart;
-        assertEquals(0, signal[i + 0]);
-        assertEquals(1, signal[i + 1]);
-
-        assertEquals(0, signal[i + 2]);
-        assertEquals(0, signal[i + 3]);
-        assertEquals(0, signal[i + 4]);
-        assertEquals(1, signal[i + 5]);
-        assertEquals(0, signal[i + 6]);
-        assertEquals(0, signal[i + 7]);
-        assertEquals(0, signal[i + 8]);
-        assertEquals(0, signal[i + 9]);
+  @Test
+  public void shouldPlayPureTone() throws Exception
+  {
+    Generator generator = new Generator();
+    int[] allOnes = new int[64];
+    Arrays.fill(allOnes, 1);
+    generator.writeModulatedSignal(allOnes);
+    Player player = new Player(Generator.getAudioFormat());
+    player.play(generator);
+    player.stop();
+  }
 
 
-        i = inclineStart;
-        assertEquals(0, signal[i + 0]);
-        assertEquals(1, signal[i + 1]);
 
-        assertEquals(0, signal[i + 2]);
-        assertEquals(0, signal[i + 3]);
-        assertEquals(0, signal[i + 4]);
-        assertEquals(0, signal[i + 5]);
-        assertEquals(0, signal[i + 6]);
-        assertEquals(1, signal[i + 7]);
-        assertEquals(0, signal[i + 8]);
-        assertEquals(0, signal[i + 9]);
-
-        i = sumStart;
-        assertEquals(0, signal[i + 0]);
-        assertEquals(1, signal[i + 1]);
-
-        assertEquals(0, signal[i + 2]);
-        assertEquals(0, signal[i + 3]);
-        assertEquals(0, signal[i + 4]);
-        assertEquals(1, signal[i + 5]);
-        assertEquals(0, signal[i + 6]);
-        assertEquals(1, signal[i + 7]);
-        assertEquals(0, signal[i + 8]);
-        assertEquals(0, signal[i + 9]);
-
-
-        assertEquals(0, signal[31]);
-    }
-
-    private void checkZeroByteAt(int[] signal, int i) {
-        assertEquals(0, signal[i + 0]);
-        assertEquals(1, signal[i + 1]);
-        assertEquals(0, signal[i + 2]);
-        assertEquals(0, signal[i + 3]);
-        assertEquals(0, signal[i + 4]);
-        assertEquals(0, signal[i + 5]);
-        assertEquals(0, signal[i + 6]);
-        assertEquals(0, signal[i + 7]);
-        assertEquals(0, signal[i + 8]);
-        assertEquals(0, signal[i + 9]);
-    }
 }

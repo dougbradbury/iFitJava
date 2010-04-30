@@ -5,14 +5,7 @@ import javax.sound.sampled.AudioFormat;
 public class Generator
 {
   private int[] signal;
-  private float incline;
-  private float speed;
   private int writeIndex;
-
-  private static int bit(int bit, int value)
-  {
-    return ((value >> bit) & 1);
-  }
 
   final static int BYTE = 8;
   final static int SYMBOLS = 32;
@@ -24,10 +17,8 @@ public class Generator
   final static double DURATION = (4.0 / FREQUENCY * (float) SYMBOLS);
   final static int SAMPLESPERSIGNAL = (int) (DURATION * SAMPLERATE);
 
-  public Generator(float incline, float speed)
+  public Generator()
   {
-    this.incline = incline;
-    this.speed = speed;
     signal = new int[SAMPLESPERSIGNAL * 5];
   }
 
@@ -36,64 +27,52 @@ public class Generator
     return new AudioFormat(AudioFormat.Encoding.PCM_SIGNED, SAMPLERATE, 16, 2, 4, SAMPLERATE, true);
   }
 
+  public void generateSignal(float incline, float speed)
+  {
+    writeTwice(Modulator.binaryModulator(incline, speed));
+  }
+
+  public void generateStop()
+  {
+    writeTwice(Modulator.modulationOf(0xFC, 0xFC));
+  }
+
   public byte[] getByteSignal()
   {
     byte[] bytes = new byte[signal.length*4];
     int byteIndex = 0;
     for (int i : signal)
     {
-      bytes[byteIndex++] = (byte) ((i >> 8) & 0xFF);
-      bytes[byteIndex++] = (byte) (i & 0xFF);
-      bytes[byteIndex++] = (byte) ((i >> 8) & 0xFF);
-      bytes[byteIndex++] = (byte) (i & 0xFF);
+      bytes[byteIndex++] = bigEnd(i);
+      bytes[byteIndex++] = littleEnd(i);
+      bytes[byteIndex++] = bigEnd(i);
+      bytes[byteIndex++] = littleEnd(i);
     }
     return bytes;
   }
 
-
-  public static int[] binaryModulator(float speed, float incline)
+  private byte littleEnd(int i)
   {
-    int intSpeed = (int) (speed * 10.0);
-    int intIncline = (int) (incline * 10.0);
-    int check = intSpeed + intIncline;
-
-    int[] sigp = new int[2 + 3 * (BYTE + 2)];
-    int i = 0;
-
-    sigp[i++] = 0;
-
-    i = writeByte(intIncline, sigp, i);
-    i = writeByte(intSpeed, sigp, i);
-    i = writeByte(check, sigp, i);
-
-    sigp[i] = 0;
-
-    return sigp;
+    return as_byte(i);
   }
 
-  private static int writeByte(int intspeed, int[] sigp, int i)
+  private byte bigEnd(int i)
   {
-    sigp[i++] = 0;
-    sigp[i++] = 1;
-
-    for(int bit = 0; bit < BYTE; bit++) // speed byte
-    {
-      sigp[i] = bit(bit, intspeed);
-      i++;
-    }
-    return i;
+    return as_byte((i >> 8));
   }
 
+  private byte as_byte(int i)
+  {
+    return (byte) (i & 0xFF);
+  }
 
-  public void generateSignal()
+  private void writeTwice(int[] signal)
   {
     writeIndex = 0;
-    int[] binarySignal = binaryModulator(incline, speed);
-
     writeZeros(SAMPLESPERSIGNAL / 4);
-    writeModulationOf(binarySignal);
+    writeModulatedSignal(signal);
     writeZeros(SAMPLESPERSIGNAL / 2);
-    writeModulationOf(binarySignal);
+    writeModulatedSignal(signal);
     writeZeros(SAMPLESPERSIGNAL / 4);
   }
 
@@ -104,14 +83,14 @@ public class Generator
       signal[writeIndex++] = 0;
   }
 
-  public void writeModulationOf(int[] binarySignal)
+  public void writeModulatedSignal(int[] moulatedSignal)
   {
     int t;
-    for(int sample : binarySignal)
+    for(int sample : moulatedSignal)
     {
       for(t = 0; t < (SAMPLESPERSIGNAL / SYMBOLS); t++)
       {
-        signal[writeIndex++] = (int) (sample * AMPLITUDE * Math.sin((ANGLE * (float) t) / (float) (SAMPLERATE)));
+        this.signal[writeIndex++] = (int) (sample * AMPLITUDE * Math.sin((ANGLE * (float) t) / SAMPLERATE));
       }
     }
   }

@@ -16,8 +16,8 @@ public class Treadmill {
     }
 
     private void sendMessage() {
-        Generator generator = new Generator(this.incline, this.speed);
-        generator.generateSignal();
+        Generator generator = new Generator();
+        generator.generateSignal(this.incline, this.speed);
         player.play(generator);
     }
 
@@ -39,7 +39,14 @@ public class Treadmill {
         return this.speed;
     }
 
+
     public void stop() {
+      Generator generator = new Generator();
+      generator.generateStop();
+      player.play(generator);
+    }
+
+    public void shutdown() {
         player.stop();
     }
 }

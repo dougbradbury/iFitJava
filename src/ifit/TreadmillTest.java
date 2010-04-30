@@ -10,7 +10,15 @@ public class TreadmillTest extends Assert
   public void shouldSetSpeedAndIncline() throws Exception
   {
     Treadmill treadmill = new Treadmill();
-    treadmill.set(1.5f, 1.2f);
+    treadmill.set(1.5f, 1.5f);
+    treadmill.shutdown();
+  }
+
+  @Test
+  public void shouldStop() throws Exception
+  {
+    Treadmill treadmill = new Treadmill();
     treadmill.stop();
+    treadmill.shutdown();
   }
 }
